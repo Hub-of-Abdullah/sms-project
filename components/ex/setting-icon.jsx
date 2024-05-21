@@ -1,7 +1,7 @@
 "use client"
 import { GearIcon } from '@radix-ui/react-icons';
-import { Button } from "@/components/ui/button"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, } from "@/components/ui/tooltip"
+import { Button } from "@/components/ui/button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, } from "@/components/ui/tooltip";
 
 export default function SettingButton() {
     return (
