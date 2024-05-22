@@ -10,7 +10,7 @@ export default function SettingButton() {
                 <TooltipTrigger asChild>
                     <Button variant="outline" size="icon">
                         <GearIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-100" />
-                        <span className="sr-only">Setting</span>
+                        <span className="sr-only">Setting Test</span>
                     </Button>
                 </TooltipTrigger>
                 <TooltipContent>
