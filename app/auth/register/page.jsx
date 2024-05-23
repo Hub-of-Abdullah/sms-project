@@ -1,7 +1,9 @@
 "use client";
-export default function SignPage() {
-    return (<>
-        Register Page !
-    </>);
+import {RegisterForm} from "@/components/auth/register-form"
+
+export default function RegisterPage() {
+    return (
+    <RegisterForm />
+);
 }
 
