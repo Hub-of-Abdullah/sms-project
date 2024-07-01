@@ -7,6 +7,13 @@ generator client {
   provider = "prisma-client-js"
 }
 
+enum UserRole {
+  USER           @map("0")
+  LIBRARYADMIN   @map("1")
+  ROOMMGTADMIN   @map("2")
+  SUPERADMIN     @map("3")
+  TRANSPORTADMIN @map("4")
+}
 
 model User {
   id            String    @id @default(auto()) @map("_id") @db.ObjectId
@@ -15,6 +22,7 @@ model User {
   emailVerified DateTime? @map("email_verified")
   image         String?
   password      String
+  role          UserRole  @default(USER)
   accounts      Account[]
 }
 

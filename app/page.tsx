@@ -14,7 +14,7 @@ export default function Home() {
 
       <ThemeButtom></ThemeButtom>
       <LoginButton>
-        <Button variant="secondary" size="lg">Sign in</Button>
+        <Button variant="secondary" size="lg">Button</Button>
       </LoginButton>
 
       {/* <div className="h-4/5 w-2/6 shadow-2xl">
