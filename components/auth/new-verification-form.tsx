@@ -2,7 +2,7 @@
 import { CardWrapper } from "@/components/auth/card-wrapper";
 import { useSearchParams } from "next/navigation";
 import { BeatLoader } from "react-spinners";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import { newVerificaition } from "@/actions/new-verification";
 import { FormError } from "@/components/ex/form-error";
 import { FormSuccess } from "@/components/ex/form-success";
@@ -14,6 +14,8 @@ export const NewVerificationForm = () => {
 
     const searchParams = useSearchParams();
     const token = searchParams.get("token");
+
+    const hasMounted = useRef(false);
 
     const onsubmit = useCallback(() => {
 
@@ -30,10 +32,13 @@ export const NewVerificationForm = () => {
                 setError("Somthing went wrong !")
             })
 
-    }, [token]);
+    }, [token, success, error]);
 
     useEffect(() => {
-        onsubmit();
+        if (!hasMounted.current) {
+            hasMounted.current = true;
+            onsubmit();
+        }
     }, [onsubmit])
 
     return (
@@ -47,7 +52,11 @@ export const NewVerificationForm = () => {
                     <BeatLoader />
                 )}
                 <FormSuccess message={success} />
-                <FormError message={error} />
+
+                {!success && (
+                    <FormError message={error} />
+                )}
+
             </div>
         </CardWrapper>
     )

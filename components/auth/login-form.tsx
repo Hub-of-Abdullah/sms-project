@@ -2,6 +2,7 @@
 
 import * as z from "zod";
 import { useForm } from "react-hook-form";
+import Link from "next/link";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState, useTransition } from "react";
 import {
@@ -93,6 +94,14 @@ export const LoginForm = () => {
                                             type="password"
                                         />
                                     </FormControl>
+                                    <Button
+                                        size="sm"
+                                        variant="link"
+                                        asChild
+                                        className="px-0 font-normal"
+                                    >
+                                        <Link href="/auth/reset">Forget Password</Link>
+                                    </Button>
                                     <FormMessage />
                                 </FormItem>
                             )}
