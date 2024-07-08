@@ -32,7 +32,7 @@ export const NewVerificationForm = () => {
                 setError("Somthing went wrong !")
             })
 
-    }, [token, success, error]);
+    }, [token]);
 
     useEffect(() => {
         if (!hasMounted.current) {

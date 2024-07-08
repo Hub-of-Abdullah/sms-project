@@ -44,6 +44,8 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
             switch (error.type) {
                 case "CredentialsSignin":
                     return { error: "Invalid Credentials!", success: undefined };
+                case "CredentialsSignin":
+                    throw error;
                 default:
                     return { error: "Something went wrong!", success: undefined };
             }
