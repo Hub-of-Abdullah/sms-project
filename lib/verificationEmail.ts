@@ -1,5 +1,18 @@
 import { sendMail } from "@/lib/mailService";
 
+export const sendTwoFactorTokenEmail = async (
+    email: string,
+    token: string
+) => {
+    const from: string = process.env.EMAIL_USER as string;
+    const to: string = email;
+    const subject: string = '2FA code';
+    const mailTemplate: string = `<p>Your 2FA Code: ${token}</p>`;
+    await sendMail(from, to, subject, mailTemplate);
+}
+
+
+
 export const sendVerificationEmail = async (
     email: string,
     token: string
